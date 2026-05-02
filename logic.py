@@ -1,12 +1,17 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import random
 
 app = Flask(__name__)
 CORS(app)
+
 @app.route("/")
 def home():
-    return "Wumpus Agent Running"
+    return send_from_directory(".", "index.html")
+
+@app.route("/<path:path>")
+def static_files(path):
+    return send_from_directory(".", path)
 GRID_SIZE = 6
 
 # hazards
