@@ -4,7 +4,9 @@ import random
 
 app = Flask(__name__)
 CORS(app)
-
+@app.route("/")
+def home():
+    return "Wumpus Agent Running"
 GRID_SIZE = 6
 
 # hazards
