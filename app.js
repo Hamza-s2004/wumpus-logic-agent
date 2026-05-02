@@ -24,7 +24,7 @@ function createGrid() {
 }
 
 async function moveAgent(x, y) {
-    let res = await fetch("http://127.0.0.1:5000/check", {
+    let res = await fetch("https://wumpus-logic-agent-5.onrender.com/check", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({x, y})
